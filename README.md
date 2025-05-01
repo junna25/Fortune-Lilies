@@ -1,4 +1,4 @@
-# Fortune-Lilies
+# Fortune-Lilies(仮)
 
 > セリフをランダムで標準してくれる、癒し?のデスクトップアプリ。
 
