@@ -44,7 +44,7 @@ button.place(relx=0.5, rely=0.60, anchor="center")
 # Xでシェアボタン
 share_button = tk.Button(
     root, text="Xでシェア", command=lambda: share_on_x(),
-    bg="#1DA1F2", fg="#FFFFFF", font=("Arial", 11)
+    bg="#000000", fg="#FFFFFF", font=("Arial", 11)
 )
 
 # 現在の名言と発言者を保存する変数
