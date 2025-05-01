@@ -137,7 +137,7 @@ def open_library():
     author_combo.bind("<<ComboboxSelected>>", update_display)
 
     ttk.Label(popup, text="出典：", background="#FFF0F5").place(x=10, y=40)
-    source_combo = ttk.Combobox(popup, textvariable=selected_source, values=sources, state="readonly", font=("Arial", 10), width=25)
+    source_combo = ttk.Combobox(popup, textvariable=selected_source, values=sources, state="readonly", font=("Arial", 10), width=35)
     source_combo.place(x=70, y=40)
     source_combo.bind("<<ComboboxSelected>>", update_display)
 
@@ -164,7 +164,7 @@ def show_quote():
     author_label.author = current_author
 
     if "source" in selected:
-        source_label.config(text=f"出典：{selected['source']}")
+        source_label.config(text=f"出典：{selected['source']} より")
     else:
         source_label.config(text="")
 
