@@ -28,3 +28,5 @@
    https://www.python.org/downloads/windows/  
    ※ インストール時に「Add Python to PATH」にチェックを入れてください。
 
+2. **ここのファイルを適当なフォルダへすべて保存**
+   
