@@ -22,7 +22,7 @@ title_label.place(relx=0.5, rely=0.34, anchor="center")
 
 # 名言ラベル
 quote_label = tk.Label(
-    root, text="", wraplength=460, justify="center",
+    root, text="", wraplength=490, justify="center",
     font=("Arial", 14, "bold"), bg="#FFF0F5"
 )
 
@@ -44,7 +44,7 @@ button.place(relx=0.5, rely=0.60, anchor="center")
 def show_quote():
     title_label.place_forget()
 
-    quote_label.place(relx=0.5, rely=0.35, anchor="center")
+    quote_label.place(relx=0.5, rely=0.3, anchor="center")
     author_label.place(relx=0.5, rely=0.43, anchor="center")
     source_label.place(relx=0.5, rely=0.48, anchor="center")
     button.place(relx=0.5, rely=0.55, anchor="center")
