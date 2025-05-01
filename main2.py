@@ -42,17 +42,34 @@ button.place(relx=0.5, rely=0.60, anchor="center")
 
 # 名言表示処理
 def show_quote():
-    title_label.place_forget()
+    global current_author
 
-    quote_label.place(relx=0.5, rely=0.35, anchor="center")
-    author_label.place(relx=0.5, rely=0.43, anchor="center")
-    source_label.place(relx=0.5, rely=0.48, anchor="center")
-    button.place(relx=0.5, rely=0.55, anchor="center")
+    title_label.place_forget()  # タイトルを非表示にする
 
     selected = random.choice(quotes)
-    quote_label.config(text=selected["quote"])
-    author_label.config(text=f"— {selected['author']}")
-    author_label.author = selected["author"]
+    quote = selected["quote"]
+    author = selected["author"]
+    source = selected.get("source", "")
+
+    current_author = author
+
+    quote_label.config(text=quote)
+    root.update_idletasks()
+    quote_height = quote_label.winfo_height()
+
+    # quote_height に応じて base_y を調整（最大50pxまで上へ）
+    offset = min((quote_height - 60), 50)
+    base_y = 120 - offset if offset > 0 else 120
+
+    quote_label.place(relx=0.5, y=base_y, anchor="n")
+    author_label.config(text=f"― {author}")
+    author_label.place(relx=0.5, y=base_y + quote_height + 10, anchor="n")
+
+    source_label.config(text=f"{source}")
+    source_label.place(relx=0.5, y=base_y + quote_height + 30, anchor="n")
+
+    show_quote_button.place(relx=0.5, y=base_y + quote_height + 70, anchor="n")
+    search_button.place(relx=0.5, y=base_y + quote_height + 100, anchor="n")
 
     if "source" in selected:
         source_label.config(text=f"出典：{selected['source']}")
